@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index page</title>
+</head>
+<body>
+    <h1>This is the Index page</h1>
+
+    {% if user.is_authenticated %}
+    <h3> Your name is {{ user.username }} !</h3>
+    <a type="button" href="{% url 'register' %}">Register</a> &nbsp;
+    <a type="button" href="{% url 'logout' %}">Logout</a> &nbsp;
+    <a type="button" href="{% url 'change_password' %}">Change Password</a> &nbsp;
+
+    {% else%}
+    <h3>Sorry, you are not logged in !</h3>
+    <a type="button" href="{% url 'register' %}">Register</a> &nbsp;
+    <a type="button" href="{% url 'login' %}">Login</a> &nbsp;
+    {% endif%}
+
+
+
+
+</body>
+</html>
