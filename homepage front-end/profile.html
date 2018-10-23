@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>TravelFun </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+  </style>
+  <style>
+       /* Set the size of the div element that contains the map */
+      #map {
+        height: 400px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a href="Homepage.html" class="navbar-brand"><span class="glyphicon glyphicon-picture"></span> TravelFun </a >
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+<!--        <li class="active"><a href="Homepage.html">Home</a></li>-->
+    
+          
+       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> About <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Ads</a></li>
+          <li><a href="#">Data Policy</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
+      </li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search">
+        <div class="form-group input-group">
+          <input type="text" class="form-control" placeholder="Search..">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </span>        
+        </div>
+      </form>
+        
+      <ul class="nav navbar-nav navbar-right">
+<!--        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Account Setting</a></li>-->
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> Account Setting <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Change Password</a></li>
+          <li><a href="#">Change Name</a></li>
+          <li><a href="#">Log Out</a></li>
+        </ul>
+      </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container text-center">    
+  <div class="row">
+    <div class="col-sm-3 well">
+      <div class="well">
+        <p><a href="#">Profile Photo</a></p>
+        <img src="bear.jpg" class="img-circle" height="65" width="65" alt="Avatar">
+          <p> Serena </p>
+      </div>
+      <div class="well">
+        <p><a href="#">Interests</a></p>
+        <p>
+<!-- <span <button onclick="location.href='sam.htm'" type="button" class="btn btn-outline-primary">Sam</button></span>-->
+          <span class="label label-primary">Photography</span>
+          <span class="label label-success">Hiking</span>
+          <span class="label label-info">Mountain</span>
+          <span class="label label-warning">Canadian</span>
+          <span class="label label-danger">Kayak</span>
+        </p>
+      </div>
+      <div class="alert alert-success fade in">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+        <p><strong>Ey!</strong></p>
+        People are looking at your profile. Find out who.
+      </div>
+      <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p>
+    </div>
+    <div class="col-sm-7">
+    
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="panel panel-default text-left">
+            <div class="panel-body">
+              <p contenteditable="true">Status: Feeling Blue</p>
+              <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-thumbs-up"></span> Like
+              </button>     
+            </div>
+          </div>
+        </div>
+      </div>
+      
+        
+      <div id="map"></div>
+      <script>
+          function initMap() {
+              var newyork = {lat: 40.730610, lng: -73.935242};
+              var map = new google.maps.Map(document.getElementById('map'), {zoom: 4, center: newyork});
+              var marker = new google.maps.Marker({position: newyork, map: map});
+          }  
+      </script>
+        
+      <p><script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA63REAH0LbcLF1Hd72GIE6TsG16uHpF_E&callback=initMap">>
+        
+          </script></p>
+        
+        
+ 
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>Bob</p>
+           <img src="bear2.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>post1.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>Jane</p>
+           <img src="bear2.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>post 2.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>Ana</p>
+           <img src="bird.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>post 3.</p>
+          </div>
+        </div>
+      </div>     
+    </div>
+    <div class="col-sm-2 well">
+      <div class="thumbnail">
+        <p>Upcoming Events:</p>
+        <img src="paris.jpg" alt="Paris" width="400" height="300">
+        <p><strong>Go Paris</strong></p>
+        <p>Tue. 27 November 2018</p>
+        <button class="btn btn-primary">Info</button>
+      </div>      
+      <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer>
+
+</body>
+</html>
