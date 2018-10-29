@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+ 
 <head>
   <title>TravelFun </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">  
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>    
     /* Set black background color, white text and some padding */
     footer {
@@ -14,17 +16,83 @@
       color: white;
       padding: 15px;
     }
-  </style>
-  <style>
-       /* Set the size of the div element that contains the map */
-      #map {
+    /* Set the size of the div element that contains the map */
+     #map {
         height: 400px;  /* The height is 400 pixels */
         width: 100%;  /* The width is the width of the web page */
        }
+      
+    .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    }
+
+    .button1 {
+        background-color: white; 
+        color: black; 
+        border: 2px solid #4CAF50;
+    }
+
+    .button1:hover {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    .button2 {
+        background-color: white; 
+        color: black; 
+        border: 2px solid #008CBA;
+    }
+
+    .button2:hover {
+        background-color: #008CBA;
+        color: white;
+    }
+
+    .button3 {
+        background-color: white; 
+        color: black; 
+        border: 2px solid #f44336;
+    }
+
+    .button3:hover {
+        background-color: #f44336;
+        color: white;
+    }
+
+    .button4 {
+        background-color: white;
+        color: black;
+        border: 2px solid #e7e7e7;
+    }
+
+    .button4:hover {background-color: #e7e7e7;}
+
+    .button5 {
+        background-color: white;
+        color: black;
+        border: 2px solid #555555;
+    }
+
+    .button5:hover {
+        background-color: #555555;
+        color: white;
+    }
   </style>
 </head>
+    
 <body>
-
+<!--    navigater bar-->
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -37,10 +105,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-<!--        <li class="active"><a href="Homepage.html">Home</a></li>-->
-    
-          
+        <li class="active"><a href="#">Home</a></li>  
        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> About <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="#">Ads</a></li>
@@ -61,32 +126,132 @@
       </form>
         
       <ul class="nav navbar-nav navbar-right">
-<!--        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Account Setting</a></li>-->
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> Account Setting <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="#">Change Password</a></li>
           <li><a href="#">Change Name</a></li>
           <li><a href="#">Log Out</a></li>
         </ul>
-      </li>
-        
+      </li>  
       </ul>
     </div>
   </div>
 </nav>
-  
+
+<!--left side column -->
 <div class="container text-center">    
   <div class="row">
     <div class="col-sm-3 well">
       <div class="well">
-        <p><a href="#">Profile Photo</a></p>
+        <p><a href="#" onclick="readURL(this);">Profile Photo</a></p>
         <img src="bear.jpg" class="img-circle" height="65" width="65" alt="Avatar">
           <p> Serena </p>
+              <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="h6 text-muted">Followers</div>
+                            <div class="h5">5342</div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="h6 text-muted">Following</div>
+                            <div class="h5">6758</div>
+                        </li>
+                    </ul>
+          <button type="button" class="btn btn-default btn-sm" onclick="alert('Thanks for following!')">
+              <span class="glyphicon glyphicon-heart"></span> Follow Me!</button>
       </div>
       <div class="well">
-        <p><a href="#">Interests</a></p>
+        <!---Post-->
+        
+        <button class="button button2" data-toggle="modal" data-target="#myModal">
+        Make a post!
+        </button>
+        <!-- 模态框（Modal） -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">
+        <!--					Create post-->
+                        </h4>
+                    </div>
+        <!--
+                    <div class="modal-body">
+                        在这里添加一些文本
+                    </div>
+        -->
+            <div class="row">
+
+                <div class="col-md-8 col-md-offset-2">
+
+                    <h1>Create a post</h1>
+
+                    <form action="" method="POST">
+
+        <!--
+                        <div class="form-group has-error">
+                            <label for="slug">Slug <span class="require">*</span> <small>(This field use in url path.)</small></label>
+                            <input type="text" class="form-control" name="slug" />
+                            <span class="help-block">Field not entered!</span>
+                        </div>
+        -->
+
+                        <div class="form-group">
+                            <label for="title">Title <span class="require">*</span></label>
+                            <input type="text" class="form-control" name="title" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea rows="5" class="form-control" name="description" ></textarea>
+                             </div>
+                        
+                           <div class="form-group">
+                              <input type='file' onchange="readURL(this);"/>
+                              <img id="blah" src="#" alt="your image"/>
+                        <script>
+                             function readURL(input) {
+                            if (input.files && input.files[0]) {
+                                var reader = new FileReader();
+
+                                reader.onload = function (e) {
+                                    $('#blah')
+                                        .attr('src', e.target.result)
+                                        .width(150)
+                                        .height(200);
+                                };
+
+                                reader.readAsDataURL(input.files[0]);
+                            }
+                        } 
+                            </script>
+                         </div>
+                    
+
+                        <div class="form-group">
+                            <p><span class="require">*</span> - required fields</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                            Close
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                            Post
+                        </button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+   <!-- Post /////-->     
+        </div>
+      <div class="well">
+        <p> Tags </p>
         <p>
-<!-- <span <button onclick="location.href='sam.htm'" type="button" class="btn btn-outline-primary">Sam</button></span>-->
           <span class="label label-primary">Photography</span>
           <span class="label label-success">Hiking</span>
           <span class="label label-info">Mountain</span>
@@ -99,27 +264,29 @@
         <p><strong>Ey!</strong></p>
         People are looking at your profile. Find out who.
       </div>
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
+      <p><a href="#">Link 1 </a></p>
+      <p><a href="#">Link 2 </a></p>
+      <p><a href="#">Link 3 </a></p>
     </div>
     <div class="col-sm-7">
-    
       <div class="row">
         <div class="col-sm-12">
           <div class="panel panel-default text-left">
             <div class="panel-body">
               <p contenteditable="true">Status: Feeling Blue</p>
               <button type="button" class="btn btn-default btn-sm">
-                <span class="glyphicon glyphicon-thumbs-up"></span> Like
-              </button>     
+                <span class="glyphicon glyphicon-thumbs-up" ></span> Like
+              </button>   
             </div>
           </div>
         </div>
       </div>
-      
         
-      <div id="map"></div>
+
+            
+        
+<!--google map -->
+<div id="map"></div>
       <script>
           function initMap() {
               var newyork = {lat: 40.730610, lng: -73.935242};
@@ -127,13 +294,11 @@
               var marker = new google.maps.Marker({position: newyork, map: map});
           }  
       </script>
-        
       <p><script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA63REAH0LbcLF1Hd72GIE6TsG16uHpF_E&callback=initMap">>
-        
           </script></p>
         
         
- 
+<!-- post example-->
       <div class="row">
         <div class="col-sm-3">
           <div class="well">
@@ -174,6 +339,8 @@
         </div>
       </div>     
     </div>
+      
+<!--right side column-->
     <div class="col-sm-2 well">
       <div class="thumbnail">
         <p>Upcoming Events:</p>
